@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="http://localhost:8080/images/favicon.png" type="image/x-icon" width="16" height="16">
+    <title>Glasses Detail</title>
+</head>
+<body style="background: aqua">
+<style>
+  table, th, td, label{
+    border:2px solid red;
+  }
+</style><br>
+<div>
+    <div>
+        <div style="float: left;">
+            <img src="http://localhost:8080/images/imagesTable1.jpg" alt="Glasses" width="150" height="150" style="border-radius: 30px"/>
+        </div>
+        <div style="float: right;">
+            <img src="http://localhost:8080/images/imagesTable2.jpg" alt="Glasses" width="150" height="150" style="border-radius: 30px"/>
+        </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br>
+    <h1 style="text-align: center;color: #3b003b">For more information about our products here</h1>
+    <table style="width: 100%; background: #e2e6ea" >
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Image</th>
+            <th>Currency</th>
+            <th>Price</th>
+            <th>Country of origin</th>
+            <th>Product expiration date</th>
+            <th>Purpose of the use of the product</th>
+            <th>Product material</th>
+            <th>The company which generated the product</th>
+        </tr>
+        <tr th:each="d:${customer}">
+            <td th:text="${d.id}"></td>
+            <td th:text="${d.name}"/>
+            <td th:text="${d.image}"/>
+            <td th:text="${d.currency}"/>
+            <td th:text="${d.price}"/>
+            <td th:text="${d.country}"/>
+            <th th:text="${d.expiration_date}"/>
+            <th th:text="${d.purpose_use_product}"/>
+            <th th:text="${d.material}"/>
+            <th th:text="${d.company}"/>
+        </tr>
+    </table>
+    <br><br><br>
+    <div >
+        <div style="float: left;">
+            <img src="http://localhost:8080/images/imagesTable3.png" alt="Glasses" width="150" height="150" style="border-radius: 30px"/>
+        </div>
+        <div style="float: right;">
+            <img src="http://localhost:8080/images/imagesTable4.png" alt="Glasses" width="150" height="150" style="border-radius: 30px"/>
+        </div>
+    </div>
+    <br>
+</div>
+</body>
+</html>
